@@ -16,11 +16,14 @@ setopt autocd	interactive_comments
 stty stop undef		
 
 plugins=(
+  fast-syntax-highlighting
   git 
+  mvn
+  terraform
+  you-should-use
   zsh-docker-aliases
   zsh-autosuggestions 
   zsh-syntax-highlighting 
-  fast-syntax-highlighting
 )
 
 autoload -Uz compinit

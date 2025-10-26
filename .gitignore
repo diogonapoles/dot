@@ -14,7 +14,9 @@ ghostty/**/*.bak
 !rofi/**
 !waybar/
 !waybar/**
+!yazi/
 !zsh/
 !zsh/.zprofile
 !zsh/.zshrc
 **/.claude/
+!btop/
