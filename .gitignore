@@ -10,4 +10,4 @@ nix-config/
 nvm/
 nvim/
 pulse/
-zsh/.zcompdump*
+zsh/
