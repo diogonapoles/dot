@@ -1,4 +1,4 @@
-theme = Nord
+theme = Gruvbox Dark
 
 # Font
 font-family = "FiraCode Nerd Font Mono"
@@ -10,7 +10,7 @@ window-theme = ghostty
 window-padding-x = 10
 window-padding-y = 10
 confirm-close-surface=false
-background-opacity = 0.85
+background-opacity = 0.80
 resize-overlay = never
 gtk-toolbar-style = flat
 

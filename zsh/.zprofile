@@ -4,7 +4,7 @@ export ZSH="$ZDOTDIR/.oh-my-zsh"
 # export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
-# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"

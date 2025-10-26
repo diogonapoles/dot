@@ -13,13 +13,13 @@
 
 /* The whole bar */
 window#waybar {
-  background: #363e4c; 
-  color: #ffffff; 
+  background: #282828; 
+  color: #ebdbb2; 
   transition-property: background-color;
   transition-duration: 0.5s;
   margin: 2px 5px 0 5px;
   margin-bottom: 8px;
-  border: 2.0px solid #99bce2;
+  /* border: 1.0px solid #98971a; */
 }
 
 /* Each module */
@@ -38,22 +38,35 @@ window#waybar {
 #mic,
 #sound {
     padding: 1 10px;
-    margin: 2.5 2px;
-    border: 1px solid;
+    /* margin: 2.5 2px; */
     background-color: transparent;
 }
 
-#clock { border-color: #b48ead; }
+#clock { 
+  color: #282828;
+  background-color: #83a598;
+}
 
-#pulseaudio { border-color: #afcfce; }
-#network { border-color: #81a1c1; }
-#cpu { border-color: #8fbcbb; }
-#memory { border-color: #7fb2b1; }
-#battery { border-color: #5e81ac; }
+#pulseaudio { 
+  background-color: #3c3836; 
+}
+#network { 
+  background-color: #504945; 
+}
+#cpu { 
+  background-color: #665c54; 
+}
+#memory { 
+  background-color: #7c6f64; 
+}
+#battery { 
+    color: #282828;
+    background-color: #fabd2f;
+}
 
 /* Battery animation preserved */
 #battery.critical:not(.charging) {
-    border-color: #bf616a;
+    border-color: #cc241d;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -69,20 +82,22 @@ window#waybar {
 
 #workspaces button {
     padding: 0 5px;
+    /* margin: 2.5 2px; */
     background-color: transparent;
-    color: #ffffff;
+    color: #ebdbb2;
     font-family: "Noto Sans JP", "JetBrainsMono Nerd Font";
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: #3c3836;
 }
 
 #workspaces button.active {
-    background-color: #99bce2;
+    color: #282828;
+    background-color: #98971a;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #cc241d;
 }
 

@@ -4,14 +4,14 @@
   "margin-top": 4,
   "margin-left": 8,
   "margin-right": 8,
-  "height": 20,
+  "height": 23,
   "spacing": 5,
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
-    "clock"  // Add clock module to the center
+    "clock" // Add clock module to the center
   ],
   "modules-right": [
     "pulseaudio",
@@ -20,22 +20,20 @@
     "memory",
     "battery",
   ],
-
   "clock": {
-      "format": "{:%I:%M %p - %B %d, %Y}",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format-alt": "{:%Y-%m-%d}"
+    "format": "{:%I:%M %p - %B %d, %Y}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
   },
   "cpu": {
-      "format": "{usage}% ",
-      "tooltip": false,
-      "on-click": "hyprctl dispatch exec '[float; size 800 600; move center] ghostty -e btop'"
+    "format": "{usage}% ",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exec '[float; size 800 600; move center] ghostty -e btop'"
   },
   "memory": {
-      "format": "{}% ",
-      "on-click": "hyprctl dispatch exec '[float; size 800 600; move center] ghostty -e btop'"
+    "format": "{}% ",
+    "on-click": "hyprctl dispatch exec '[float; size 800 600; move center] ghostty -e btop'"
   },
-
   "hyprland/window": {
     "max-length": 30
   },
@@ -53,13 +51,17 @@
     "format-bluetooth-muted": " {icon}",
     "format-muted": "󰸈",
     "format-icons": {
-        "headphone": "",
-        "hands-free": "󰂰",
-        "headset": "",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": ["", "", ""]
+      "headphone": "",
+      "hands-free": "󰂰",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "hyprctl dispatch exec '[float; size 600 700; move center] ghostty -e wiremix --tab output'",
   },
@@ -80,17 +82,22 @@
     "on-click": "hyprctl dispatch exec '[float; size 900 700; move center] ghostty -e nmtui'"
   },
   "battery": {
-      "states": {
-        "warning": 30,
-        "critical": 15
-      },
-
-      "format": "{capacity}% {icon} ",
-      "format-alt": "{time} {icon} ",
-      "format-charging": "{capacity}% 󰂄 ",
-      "format-plugged": "{capacity}%  ",
-      "format-alt": "{time} {icon} ",
-      "format-icons": ["", "", "", "", ""]
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon} ",
+    "format-alt": "{time} {icon} ",
+    "format-charging": "{capacity}% 󰂄 ",
+    "format-plugged": "{capacity}%  ",
+    "format-alt": "{time} {icon} ",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "hyprland/workspaces": {
     "format": "{icon}",
