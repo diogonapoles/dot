@@ -28,10 +28,12 @@
   },
   "cpu": {
       "format": "{usage}% ",
-      "tooltip": false
+      "tooltip": false,
+      "on-click": "hyprctl dispatch exec '[float; size 800 600; move center] ghostty -e btop'"
   },
   "memory": {
-      "format": "{}% "
+      "format": "{}% ",
+      "on-click": "hyprctl dispatch exec '[float; size 800 600; move center] ghostty -e btop'"
   },
 
   "hyprland/window": {
@@ -59,7 +61,7 @@
         "car": "",
         "default": ["", "", ""]
     },
-    "on-click": "pavucontrol",
+    "on-click": "hyprctl dispatch exec '[float; size 600 700; move center] ghostty -e wiremix --tab output'",
   },
   "bluetooth": {
     "format": "",
@@ -74,7 +76,8 @@
     "format-wifi": "󰖩 {essid}",
     "format-ethernet": "󰈀 {ipaddr}",
     "format-disconnected": "Disconnected",
-    "max-length": 32
+    "max-length": 32,
+    "on-click": "hyprctl dispatch exec '[float; size 600 700; move center] ghostty -e nmtui'"
   },
   "battery": {
       "states": {

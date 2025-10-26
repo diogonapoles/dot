@@ -9,6 +9,7 @@
 !fastfetch/**
 !ghostty/
 !ghostty/**
+ghostty/**/*.bak
 !rofi/
 !rofi/**
 !waybar/
@@ -16,3 +17,4 @@
 !zsh/
 !zsh/.zprofile
 !zsh/.zshrc
+**/.claude/
