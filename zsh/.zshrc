@@ -15,7 +15,13 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 setopt autocd	interactive_comments	
 stty stop undef		
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting)
+plugins=(
+  git 
+  zsh-docker-aliases
+  zsh-autosuggestions 
+  zsh-syntax-highlighting 
+  fast-syntax-highlighting
+)
 
 autoload -Uz compinit
 compinit
