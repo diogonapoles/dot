@@ -28,11 +28,11 @@
   "cpu": {
     "format": "{usage}% ",
     "tooltip": false,
-    "on-click": "hyprctl dispatch exec '[float; size 800 600; move center] ghostty -e btop'"
+    "on-click": "hyprctl dispatch exec '[float; size 1000 800; move center] ghostty -e btop'"
   },
   "memory": {
     "format": "{}% ",
-    "on-click": "hyprctl dispatch exec '[float; size 800 600; move center] ghostty -e btop'"
+    "on-click": "hyprctl dispatch exec '[float; size 1000 800; move center] ghostty -e btop'"
   },
   "hyprland/window": {
     "max-length": 30
