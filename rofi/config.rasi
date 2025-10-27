@@ -2,4 +2,4 @@ configuration {
     font: "JetBrainsMono Nerd Font regular 13";
 }
 
-@theme "nord.rasi"
+@theme "gruvbox.rasi"
