@@ -20,3 +20,4 @@ ghostty/**/*.bak
 !zsh/.zshrc
 **/.claude/
 !btop/
+!swaync/
