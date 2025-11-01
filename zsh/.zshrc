@@ -1,6 +1,5 @@
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -e
 zstyle :compinstall filename '~/.config/zsh/.zshrc'
 
 unsetopt PROMPT_SP
@@ -25,6 +24,7 @@ plugins=(
   zsh-docker-aliases
   zsh-autosuggestions 
   zsh-syntax-highlighting 
+  zsh-vi-mode
 )
 
 autoload -Uz compinit
