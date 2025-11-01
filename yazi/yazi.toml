@@ -1,2 +1,11 @@
 [preview]
 image_delay = 10
+
+
+[opener]
+zathura = [
+  { run = 'zathura "$@"', orphan = false, desc = "zathura", for = "unix" },
+]
+
+[open]
+rules = [{ mime = "application/pdf", use = ["zathura"] }]
