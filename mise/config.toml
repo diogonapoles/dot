@@ -1,0 +1,10 @@
+[tools]
+go = "latest"
+java = "21"
+lua = "latest"
+maven = "3.9"
+node = "latest"
+python = "3.14.0"
+spring-boot = "3"
+terraform = "latest"
+usage = "latest"
