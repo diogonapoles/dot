@@ -2,23 +2,18 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 autoload -Uz compinit && compinit
 
+# download and load zinit 
 if [ ! -d "$ZINIT_HOME" ]; then
    mkdir -p "$(dirname $ZINIT_HOME)"
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 source "${ZINIT_HOME}/zinit.zsh"
 
-# annexes without turbo
-zinit light zdharma-continuum/zinit-annex-as-monitor
-zinit light zdharma-continuum/zinit-annex-bin-gem-node
-zinit light zdharma-continuum/zinit-annex-patch-dl
-zinit light zdharma-continuum/zinit-annex-rust
-
 # plugins
 zinit light zsh-users/zsh-syntax-highlighting
-zinit light zdharma-continuum/fast-syntax-highlighting 
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+# zinit light zdharma-continuum/fast-syntax-highlighting 
 zinit light MichaelAquilina/zsh-you-should-use
 zinit light jeffreytse/zsh-vi-mode 
 zinit light Aloxaf/fzf-tab
@@ -32,8 +27,9 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+# completions
+autoload -Uz compinit && compinit
+
 zinit cdreplay -q
 
 # history
@@ -49,10 +45,21 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-autoload -U colors && colors	# load colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-setopt autocd	interactive_comments	
-stty stop undef
+# completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zle_highlight+=(paste:none)
+
+
+# aliases
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias cd="z"
+alias vim='nvim'
+alias grep='grep --color=auto'
+alias c='clear'
 
 eval "$(fzf --zsh)"
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
@@ -64,13 +71,6 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
-
-# aliases
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias cd="z"
-alias vim='nvim'
-alias grep='grep --color=auto'
-alias c='clear'
 
 eval "$(thefuck --alias)"
 eval "$(zoxide init zsh)"
