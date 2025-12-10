@@ -27,5 +27,5 @@ monitor_count=$(sudo -u "$USER" HYPRLAND_INSTANCE_SIGNATURE="$active_instance" h
 if [[ "$monitor_count" -gt 0 ]]; then
   sudo -u "$USER" HYPRLAND_INSTANCE_SIGNATURE="$active_instance" hyprctl keyword monitor "$LAPTOP_DISPLAY,disable"
 else
-  sudo -u "$USER" HYPRLAND_INSTANCE_SIGNATURE="$active_instance" hyprctl keyword monitor "$LAPTOP_DISPLAY,preferred,auto,2.0"
+  sudo -u "$USER" HYPRLAND_INSTANCE_SIGNATURE="$active_instance" hyprctl keyword monitor "$LAPTOP_DISPLAY,highres,auto,2.0"
 fi
