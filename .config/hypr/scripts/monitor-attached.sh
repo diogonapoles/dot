@@ -26,6 +26,8 @@ monitor_count=$(sudo -u "$USER" HYPRLAND_INSTANCE_SIGNATURE="$active_instance" h
 
 if [[ "$monitor_count" -gt 0 ]]; then
   sudo -u "$USER" HYPRLAND_INSTANCE_SIGNATURE="$active_instance" hyprctl keyword monitor "$LAPTOP_DISPLAY,disable"
+  sudo -u "$USER" HYPRLAND_INSTANCE_SIGNATURE="$active_instance" hyprctl keyword env "GDK_SCALE,1.75"
 else
   sudo -u "$USER" HYPRLAND_INSTANCE_SIGNATURE="$active_instance" hyprctl keyword monitor "$LAPTOP_DISPLAY,highres,auto,2.0"
+  sudo -u "$USER" HYPRLAND_INSTANCE_SIGNATURE="$active_instance" hyprctl keyword env "GDK_SCALE,2"
 fi
