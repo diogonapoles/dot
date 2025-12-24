@@ -1,8 +1,8 @@
 [tools]
-# claude-code = "latest"
+claude-code = "latest"
+node = "latest"
 # go = "1.25"
 # java = "21"
 # maven = "latest"
-# node = "lts"
 # rust = "stable"
 # terraform = "1.14"
