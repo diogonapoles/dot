@@ -1,36 +1,24 @@
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+export ZSH="$HOME/dotfiles/.config/zsh/.oh-my-zsh"
 
-autoload -Uz compinit && compinit
+zstyle ':omz:update' mode reminder  # reminder to update
 
-# download and load zinit 
-if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-source "${ZINIT_HOME}/zinit.zsh"
+plugins=(
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-completions
+  git
+  mvn
+  mise
+  docker
+  sudo
+  archlinux
+  command-not-found
+)
 
-# plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-# zinit light zdharma-continuum/fast-syntax-highlighting 
-zinit light MichaelAquilina/zsh-you-should-use
-zinit light jeffreytse/zsh-vi-mode 
-zinit light Aloxaf/fzf-tab
-
-# snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::mvn
-zinit snippet OMZP::mise
-zinit snippet OMZP::docker
-zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::command-not-found
-
-# completions
-autoload -Uz compinit && compinit
-
-zinit cdreplay -q
+# improve shell startup time
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+autoload -U compinit && compinit
+source $ZSH/oh-my-zsh.sh
 
 # history
 HISTSIZE=5000
