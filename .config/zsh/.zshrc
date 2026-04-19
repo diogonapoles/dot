@@ -1,3 +1,6 @@
+export PATH="$HOME/.config/emacs/bin:$PATH"
+export DOOMDIR="$HOME/.config/doom"
+
 export ZSH="$HOME/dotfiles/.config/zsh/.oh-my-zsh"
 
 zstyle ':omz:update' mode reminder  # reminder to update

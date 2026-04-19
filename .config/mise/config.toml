@@ -1,5 +1,4 @@
 [tools]
-claude-code = "latest"
 node = "latest"
 go = "1.25"
 java = "21"
